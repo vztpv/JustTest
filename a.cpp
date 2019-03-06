@@ -219,7 +219,7 @@ std::vector<std::string> varVec;
 					nestedUT[braceNum]->ReserveItemList(nestedUT[braceNum]->GetItemListSize() + varVec.size());
 
 					for (int i = 0; i < varVec.size(); ++i) {
-						nestedUT[braceNum]->AddItem(std::move(varVec[i]), std::move(valVec[i]));
+						nestedUT[braceNum]->AddItem(varVec[i], valVec[i]);
 					}
 					varVec.clear();
 					valVec.clear();
@@ -232,4 +232,3 @@ std::vector<std::string> varVec;
 					throw std::string("error i > last_idx + 1: " + toStr(i) + " , " + toStr(last_idx));
 				}
 				return true;
-			}
